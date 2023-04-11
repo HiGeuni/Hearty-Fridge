@@ -2,7 +2,24 @@ import { ThemeOptions } from "@mui/material";
 
 const defaultTheme: ThemeOptions = {
   palette: {
-    mode: "light",
+    primary : {
+      main: 
+    },
+    secondary : {
+
+    },
+    error: {
+      
+    },
+    warning: {
+
+    }, 
+    info: {
+
+    },
+    success: {
+
+    }
   },
 };
 
