@@ -16,7 +16,6 @@ declare module "@mui/material/styles" {
       };
       beige: {
         main: string;
-        secondary: string;
         white: string;
       };
       error: string;

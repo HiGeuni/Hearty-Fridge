@@ -11,6 +11,8 @@ import "@fontsource/roboto/700.css";
 import createEmotionCache from "../utility/createEmotionCache";
 import theme from "../styles/customColor";
 import "../styles/globals.css";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import { RecoilRoot } from "recoil";
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
@@ -22,12 +24,18 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
   return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </CacheProvider>
+    <RecoilRoot>
+      <CacheProvider value={emotionCache}>
+        <GoogleOAuthProvider
+          clientId={process.env.NEXT_PUBLIC_GOOGLE_LOGIN_CLIENT_ID || ""}
+        >
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </GoogleOAuthProvider>
+      </CacheProvider>
+    </RecoilRoot>
   );
 };
 
