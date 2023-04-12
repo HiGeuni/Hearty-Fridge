@@ -2,6 +2,7 @@ import * as React from "react";
 import type { AppProps } from "next/app";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -22,18 +23,20 @@ const clientSideEmotionCache = createEmotionCache();
 
 const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-
+  const queryClient = new QueryClient();
   return (
     <RecoilRoot>
       <CacheProvider value={emotionCache}>
-        <GoogleOAuthProvider
-          clientId={process.env.NEXT_PUBLIC_GOOGLE_LOGIN_CLIENT_ID || ""}
-        >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <Component {...pageProps} />
-          </ThemeProvider>
-        </GoogleOAuthProvider>
+        <QueryClientProvider client={queryClient}>
+          <GoogleOAuthProvider
+            clientId={process.env.NEXT_PUBLIC_GOOGLE_LOGIN_CLIENT_ID || ""}
+          >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <Component {...pageProps} />
+            </ThemeProvider>
+          </GoogleOAuthProvider>
+        </QueryClientProvider>
       </CacheProvider>
     </RecoilRoot>
   );

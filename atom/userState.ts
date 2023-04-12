@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 import { v1 } from "uuid";
-import { axiosInstance } from "@api/index";
+import axiosInstance from "@api/index";
 
 export const userState = atom<string | null>({
   key: `userState/${v1()}`,
@@ -11,6 +11,7 @@ export const userState = atom<string | null>({
         const token = localStorage.getItem("accessToken");
         if (token !== null) {
           setSelf(token);
+          console.log(token);
           axiosInstance.defaults.headers.common[
             "Authorization"
           ] = `Bearer ${token}`;
