@@ -20,11 +20,13 @@ const Header = () => {
   }, [accessToken]);
 
   return (
-    <CustomContainer>
+    <CustomContainer maxWidth={false}>
       <Navigation>
-        <Image width={145} height={120} src={logo} alt="logo" />
-        <CustomLink href="">Intro</CustomLink>
-        <CustomLink href="">Map</CustomLink>
+        <Link href="/">
+          <Image width={145} height={120} src={logo} alt="logo" />
+        </Link>
+        <CustomLink href="/intro">Intro</CustomLink>
+        <CustomLink href="/map">Map</CustomLink>
       </Navigation>
       <InfoArea>
         {isLoggedIn ? (
