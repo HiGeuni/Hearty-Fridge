@@ -1,11 +1,11 @@
 import { Button, Container } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../public/logo.png";
+import logo from "@public/logo.png";
 import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
-import { useGoogleAuth } from "../../api/auth/googleAuth";
-import { userState } from "../../atom/userState";
+import { useGoogleAuth } from "@api/auth/googleAuth";
+import { userState } from "@atom/userState";
 import styled from "@emotion/styled";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Theme } from "@emotion/react";

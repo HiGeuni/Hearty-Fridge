@@ -8,9 +8,9 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
-import createEmotionCache from "../utility/createEmotionCache";
-import theme from "../styles/customColor";
-import "../styles/globals.css";
+import createEmotionCache from "@util/createEmotionCache";
+import theme from "@styles/customColor";
+import "@styles/globals.css";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { RecoilRoot } from "recoil";
 

@@ -1,7 +1,7 @@
 import { useGoogleLogin } from "@react-oauth/google";
-import { axiosInstance } from "..";
+import { axiosInstance } from "@api/index";
 import { useResetRecoilState, useSetRecoilState } from "recoil";
-import { userState } from "../../atom/userState";
+import { userState } from "@atom/userState";
 
 export const useGoogleAuth = () => {
   const setAccessToken = useSetRecoilState(userState);

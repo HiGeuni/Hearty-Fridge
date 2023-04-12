@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 import { v1 } from "uuid";
-import { axiosInstance } from "../api";
+import { axiosInstance } from "@api/index";
 
 export const userState = atom<string | null>({
   key: `userState/${v1()}`,

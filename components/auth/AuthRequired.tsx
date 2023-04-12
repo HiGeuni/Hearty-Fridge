@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { FC, ReactNode, useEffect } from "react";
-import { userState } from "../../atom/userState";
+import { userState } from "@atom/userState";
 import { useRecoilValue } from "recoil";
 
 interface AuthProps {
