@@ -12,7 +12,7 @@ const AuthRequired: FC<AuthProps> = ({ children }) => {
   const accessToken = useRecoilValue(userState);
   useEffect(() => {
     if (router.isReady && accessToken === null) {
-      alert("Token is Expired");
+      alert("Please Login!");
       router.replace("/");
     }
   }, []);
