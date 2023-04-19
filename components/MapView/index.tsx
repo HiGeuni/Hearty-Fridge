@@ -6,7 +6,7 @@ interface IProps {
   isLoaded: boolean;
 }
 
-const MapComponent: NextComponentType<NextPageContext, IProps, IProps> = ({
+const MapView: NextComponentType<NextPageContext, IProps, IProps> = ({
   isLoaded,
 }) => {
   const mapCenter = useMemo(
@@ -28,17 +28,17 @@ const MapComponent: NextComponentType<NextPageContext, IProps, IProps> = ({
   }
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", height: "100%" }}>
       <GoogleMap
         options={mapOptions}
         zoom={14}
         center={mapCenter}
         mapTypeId={google.maps.MapTypeId.ROADMAP}
-        mapContainerStyle={{ width: "800px", height: "800px" }}
+        mapContainerStyle={{ width: "100%", height: "100%" }}
         onLoad={() => console.log("Map Component Loaded...")}
       />
     </div>
   );
 };
 
-export default MapComponent;
+export default MapView;
