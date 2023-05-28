@@ -10,7 +10,7 @@ export const getAllFridge = async () => {
 };
 
 export const getFridgeById = async ({ fridgeId }: { fridgeId: number }) => {
-  const res = await axiosInstance.request<IFridgeDetail>({
+  const res = await axiosInstance.request<{ data: IFridgeDetail }>({
     method: "GET",
     url: `/fridge/getFridge2?fridgeId=${fridgeId}`,
   });

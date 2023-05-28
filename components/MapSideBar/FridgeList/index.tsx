@@ -4,18 +4,20 @@ import { useGetAllFridges } from "@api/hooks/fridge";
 import { ContentWrapper } from "./style";
 import { useCallback } from "react";
 import { useRouter } from "next/router";
+import Loading from "@components/Loading";
 
 const FridgeList = ({ id }: { id: string }) => {
   const { data, isLoading } = useGetAllFridges();
   const router = useRouter();
   const handleOnClickItem = useCallback(
-    (id) => {
+    (id: number) => {
       router.push(`/map?id=${id}`);
     },
     [router, id]
   );
 
-  if (isLoading) return <></>;
+  if (isLoading) return <Loading />;
+
   return (
     <ContentWrapper>
       {data &&

@@ -9,10 +9,7 @@ interface IProps {
 const MapView: NextComponentType<NextPageContext, IProps, IProps> = ({
   isLoaded,
 }) => {
-  const mapCenter = useMemo(
-    () => ({ lat: 27.672932021393862, lng: 85.31184012689732 }),
-    []
-  );
+  const mapCenter = useMemo(() => ({ lat: 37.541, lng: 126.986 }), []);
 
   const mapOptions = useMemo<google.maps.MapOptions>(
     () => ({

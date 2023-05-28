@@ -8,12 +8,10 @@ export interface IFridgeInfo {
 }
 
 export interface IFridgeDetail {
-  data: {
-    fridgeInfo: IFridgeInfo;
-    isBookmark: boolean;
-    foodList: IFood[];
-    messageList: IMessage[];
-  };
+  fridgeInfo: IFridgeInfo;
+  isBookmark: boolean;
+  foodList: IFoodList[];
+  messageList: IMessage[];
 }
 
 export interface IFridgeItem {
@@ -30,6 +28,15 @@ export interface IFridgeAll {
 }
 
 export interface IFood {
+  id: number;
+  message: string;
+  expiration: string;
+  amount: string;
+  category: string;
+  name: string;
+}
+export interface IFoodList {
+  food: IFood;
   fridgeName: string;
   giveId: number;
   giveTime: string;
@@ -42,3 +49,13 @@ export interface IMessage {
   messageId: number;
   sendTime: string;
 }
+export interface IUser {
+  memberId: number;
+  email: string;
+  name: string;
+  profileImage: string;
+}
+
+// profileImage가 img라면 HTMLImageElement
+// input이라면 File
+// URL이라면 string

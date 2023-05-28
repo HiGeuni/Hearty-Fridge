@@ -12,8 +12,8 @@ export const ItemContainer = styled.div(({ theme, activate }) => ({
 }));
 
 export const InfoArea = styled.div(({ theme }) => ({
-  margin: "20px 0 20px 16px",
-  width: "260px",
+  margin: "20px 10px 20px 16px",
+  minWidth: "260px",
 }));
 
 export const InfoTitle = styled.div(({ theme, activate }) => ({
@@ -30,6 +30,7 @@ export const Distance = styled.span(({ theme }) => ({
 
 export const Seperator = styled.span(({ theme }) => ({
   fontWeight: "700",
+  margin: "0 5px",
   color: theme.custom.secondary.main30,
 }));
 
