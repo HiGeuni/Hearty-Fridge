@@ -13,5 +13,18 @@ export const ListContainer = styled.div(({ theme }) => ({
 }));
 
 export const FoodMessageContainer = styled.div`
-  padding: 20px 0 0 20px;
+  display: flex;
+  padding: 20px 20px 20px 20px;
+`;
+
+export const Like = styled.div`
+  display: flex;
+  position: relative;
+  justify-content: center;
+  top: 158px;
+  left: 414px;
+  width: 40px;
+  height: 30px;
+  margin-bottom: -30px;
+  border-radius: 10px 10px 0 0;
 `;

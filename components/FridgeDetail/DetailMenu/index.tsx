@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { MenuContainer, MenuItem } from "./style";
 
-const DetailMenu = () => {
-  const [isFood, setIsFood] = useState(true);
+interface IProps {
+  isFood: boolean;
+  setIsFood: Dispatch<SetStateAction<boolean>>;
+}
+
+const DetailMenu = ({ isFood, setIsFood }: IProps) => {
   return (
     <MenuContainer>
-      <MenuItem activate={isFood}>FoodList</MenuItem>
+      <MenuItem onClick={() => setIsFood(true)} activate={isFood}>
+        FoodList
+      </MenuItem>
       <MenuItem activate={false}>|</MenuItem>
-      <MenuItem activate={!isFood}>Hearty Message</MenuItem>
+      <MenuItem onClick={() => setIsFood(false)} activate={!isFood}>
+        Hearty Talk
+      </MenuItem>
     </MenuContainer>
   );
 };

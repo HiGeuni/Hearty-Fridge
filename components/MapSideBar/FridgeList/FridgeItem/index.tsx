@@ -11,7 +11,8 @@ import {
 import testImg from "public/Rectangle 135.png";
 import Image from "next/image";
 import { IFridgeItem } from "types";
-import { Star, StarOutline } from "@mui/icons-material";
+import StarRoundedIcon from "@mui/icons-material/StarRounded";
+import StarOutlineRoundedIcon from "@mui/icons-material/StarOutlineRounded";
 
 interface Props {
   data: IFridgeItem;
@@ -44,9 +45,9 @@ const FridgeItem = ({ data, activate, onClick }: Props) => {
       </InfoArea>
       <Favorite>
         {data.isBookmark ? (
-          <Star sx={{ width: "21px", height: "21px" }} />
+          <StarRoundedIcon sx={{ width: "21px", height: "21px" }} />
         ) : (
-          <StarOutline sx={{ width: "21px", height: "21px" }} />
+          <StarOutlineRoundedIcon sx={{ width: "21px", height: "21px" }} />
         )}
       </Favorite>
     </ItemContainer>

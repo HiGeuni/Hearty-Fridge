@@ -1,5 +1,5 @@
 import { IFoodList } from "types";
-import { StyledTable, StyledTableHeader } from "./style";
+import { StyledTable, StyledTableHeader, StyledTd, StyledTr } from "./style";
 import moment from "moment";
 
 const FoodList = ({ foods }: { foods: IFoodList[] }) => {
@@ -9,11 +9,13 @@ const FoodList = ({ foods }: { foods: IFoodList[] }) => {
       <StyledTableHeader>Amount</StyledTableHeader>
       <StyledTableHeader>Expiration Date</StyledTableHeader>
       {foods.map((food) => (
-        <tr>
-          <td>{food.food.name}</td>
-          <td>{food.food.amount}</td>
-          <td>~{moment(food.food.expiration).format("yyyy.mm.DD")}</td>
-        </tr>
+        <StyledTr>
+          <StyledTd>{food.food.name}</StyledTd>
+          <StyledTd>{food.food.amount}</StyledTd>
+          <StyledTd>
+            ~{moment(food.food.expiration).format("yyyy.mm.DD")}
+          </StyledTd>
+        </StyledTr>
       ))}
     </StyledTable>
   );

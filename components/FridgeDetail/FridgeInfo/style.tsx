@@ -5,6 +5,7 @@ export const InfoContainer = styled.div(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  justifyContent: "center",
   borderRadius: "10px",
   maxWidth: "423px",
   minHeight: "193px",
@@ -13,6 +14,7 @@ export const InfoContainer = styled.div(({ theme }) => ({
 }));
 
 export const InfoTitle = styled.div(({ theme }) => ({
+  textAlign: "center",
   fontWeight: "700",
   fontSize: "26px",
   marginTop: "32px",
