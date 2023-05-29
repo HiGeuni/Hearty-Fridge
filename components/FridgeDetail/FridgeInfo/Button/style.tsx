@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const CustomButton = styled.button(({ theme, isResv }) => ({
-  width: "100px",
+  width: "110px",
   height: "40px",
   color: isResv ? theme.custom.primary : theme.custom.beige.main,
   backgroundColor: isResv ? theme.custom.beige.main : theme.custom.primary,

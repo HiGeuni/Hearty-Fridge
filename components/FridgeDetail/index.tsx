@@ -16,12 +16,12 @@ import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import StarOutlineRoundedIcon from "@mui/icons-material/StarOutlineRounded";
 
 interface FridgeDetailProps {
-  id: number;
+  id: string;
 }
 
 const FridgeDetail = ({ id }: FridgeDetailProps) => {
   const [isFood, setIsFood] = useState(true);
-  const { data } = useGetFridgeById({ id: id });
+  const { data } = useGetFridgeById({ id: parseInt(id) });
   if (!data) return <Loading />;
 
   return (
