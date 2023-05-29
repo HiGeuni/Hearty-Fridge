@@ -3,9 +3,10 @@ import SearchBar from "./SearchBar";
 import FridgeList from "./FridgeList";
 import SideMenu from "./SideMenu";
 import { useState } from "react";
+import DefaultModal from "@components/Forms";
 
 interface MapSideBarProps {
-  id: number;
+  id: string;
 }
 
 const MapSideBar = ({ id }: MapSideBarProps) => {

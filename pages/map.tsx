@@ -1,7 +1,6 @@
 // import { getFridgeById } from "@api/fridges";
 import AuthRequired from "@components/auth/AuthRequired";
 import Header from "@components/Header";
-// import { useGetAllFridges, useGetFridgeById } from "@api/hooks/fridge";
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 import type { NextPage } from "next";
 import { useEffect, useMemo, useState } from "react";
@@ -16,8 +15,6 @@ type QueryParams = {
 };
 
 const Map: NextPage = () => {
-  // const { data: dataAll, refetch } = useGetAllFridges();
-  // const { data: dataOne, refetch: refetchOne } = useGetFridgeById({ id: 363 });
   const router = useRouter();
   const [activateId, setActivateId] = useState<string>("");
   const { isLoaded } = useLoadScript({

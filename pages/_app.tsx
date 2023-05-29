@@ -20,10 +20,11 @@ interface MyAppProps extends AppProps {
 }
 
 const clientSideEmotionCache = createEmotionCache();
+const queryClient = new QueryClient();
 
 const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-  const queryClient = new QueryClient();
+
   return (
     <RecoilRoot>
       <CacheProvider value={emotionCache}>
