@@ -1,8 +1,18 @@
-import { IFoodList } from "types";
-import DefaultModal from "..";
-import { ModalContent, ModalInfo, ModalTitle } from "../style";
-import moment from "moment";
-import { CustomCheckbox, CustomImage, FlexDiv, FoodContainer } from "./style";
+import { IFoodList } from 'types';
+import DefaultModal from '..';
+import { ButtonContainer, ModalContent, ModalInfo, ModalTitle, StyledButtons } from '../style';
+// @ts-ignore
+import moment from 'moment';
+import {
+  CustomCheckbox,
+  CustomImage,
+  FlexDiv,
+  FlexDiv2,
+  FoodContainer,
+  FoodInfo,
+  FoodName,
+} from './style';
+import { useEffect } from 'react';
 
 interface IProps {
   open: boolean;
@@ -18,22 +28,26 @@ const ReservationModal = ({ data, open, handleClose }: IProps) => {
       <ModalContent>
         {data.map((food) => (
           <FoodContainer key={food.food.id}>
-            <div>
-              <CustomCheckbox type="checkbox" />
+            <FlexDiv2>
+              <CustomCheckbox type='checkbox' />
               <CustomImage>Image</CustomImage>
-            </div>
+            </FlexDiv2>
             <div>
-              <div>{food.food.name}</div>
+              <FoodName>{food.food.name}</FoodName>
               <FlexDiv>
-                <div>{food.food.amount}</div>
-                <div> | </div>
-                <div>~{moment(food.food.expiration).format("yyyy.mm.DD")}</div>
+                <FoodInfo>{food.food.amount}</FoodInfo>
+                <FoodInfo> |</FoodInfo>
+                <FoodInfo>~{moment(food.food.expiration).format('yyyy.mm.DD')}</FoodInfo>
               </FlexDiv>
               <div>{food.food.message}</div>
             </div>
           </FoodContainer>
         ))}
       </ModalContent>
+      <ButtonContainer>
+        <StyledButtons isActive={false}>Cancel</StyledButtons>
+        <StyledButtons isActive={true}>Next</StyledButtons>
+      </ButtonContainer>
     </DefaultModal>
   );
 };
