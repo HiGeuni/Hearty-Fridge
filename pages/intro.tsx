@@ -1,11 +1,5 @@
-import Header from "@components/Header";
-import AuthRequired from "@components/auth/AuthRequired";
-import { getFridgeById } from "@api/fridges";
+import Header from '@components/Header';
 
 export default function Intro(): JSX.Element {
-  return (
-    <>
-      <Header />
-    </>
-  );
+  return <Header />;
 }

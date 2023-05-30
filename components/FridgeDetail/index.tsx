@@ -1,25 +1,24 @@
-import { useState } from "react";
-import DetailMenu from "./DetailMenu";
-import FridgeInfo from "./FridgeInfo";
-import FoodList from "./FoodList";
+import { useState } from 'react';
+import { useGetFridgeById } from '@api/hooks/fridge';
+import Loading from '@components/Loading';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
+import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded';
+import DetailMenu from './DetailMenu';
+import FridgeInfo from './FridgeInfo';
+import FoodList from './FoodList';
 import {
   DetailContainer,
   FoodMessageContainer,
   Like,
   ListContainer,
-} from "./style";
-import { useGetFridgeById } from "@api/hooks/fridge";
-import { IFridgeDetail } from "types";
-import Loading from "@components/Loading";
-import HeartyTalkList from "./HeartyMessage";
-import StarRoundedIcon from "@mui/icons-material/StarRounded";
-import StarOutlineRoundedIcon from "@mui/icons-material/StarOutlineRounded";
+} from './style';
+import HeartyTalkList from './HeartyMessage';
 
 interface FridgeDetailProps {
   id: string;
 }
 
-const FridgeDetail = ({ id }: FridgeDetailProps) => {
+function FridgeDetail({ id }: FridgeDetailProps) {
   const [isFood, setIsFood] = useState(true);
   const { data } = useGetFridgeById({ id: parseInt(id) });
   if (!data) return <Loading />;
@@ -28,9 +27,9 @@ const FridgeDetail = ({ id }: FridgeDetailProps) => {
     <DetailContainer>
       <Like>
         {data.isBookmark ? (
-          <StarRoundedIcon style={{ color: "#F2916E" }} />
+          <StarRoundedIcon style={{ color: '#F2916E' }} />
         ) : (
-          <StarOutlineRoundedIcon style={{ color: "#F2916E" }} />
+          <StarOutlineRoundedIcon style={{ color: '#F2916E' }} />
         )}
       </Like>
       <FridgeInfo data={data} />
@@ -46,6 +45,6 @@ const FridgeDetail = ({ id }: FridgeDetailProps) => {
       </ListContainer>
     </DetailContainer>
   );
-};
+}
 
 export default FridgeDetail;

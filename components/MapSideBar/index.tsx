@@ -1,22 +1,20 @@
-import { NextComponentType } from "next";
-import SearchBar from "./SearchBar";
-import FridgeList from "./FridgeList";
-import SideMenu from "./SideMenu";
-import { useState } from "react";
-import DefaultModal from "@components/Forms";
+import { useState } from 'react';
+import SearchBar from './SearchBar';
+import FridgeList from './FridgeList';
+import SideMenu from './SideMenu';
 
 interface MapSideBarProps {
   id: string;
 }
 
-const MapSideBar = ({ id }: MapSideBarProps) => {
+function MapSideBar({ id }: MapSideBarProps) {
   const [isFavorite, setIsFavorite] = useState(false);
   return (
     <div
       style={{
-        minWidth: "500px",
-        paddingLeft: "80px",
-        backgroundColor: "#f8f8f8",
+        minWidth: '500px',
+        paddingLeft: '80px',
+        backgroundColor: '#f8f8f8',
       }}
     >
       <SideMenu isFavorite={isFavorite} setIsFavorite={setIsFavorite} />
@@ -24,6 +22,6 @@ const MapSideBar = ({ id }: MapSideBarProps) => {
       <FridgeList id={id} />
     </div>
   );
-};
+}
 
 export default MapSideBar;

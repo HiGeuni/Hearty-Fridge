@@ -1,6 +1,4 @@
-import Header from "@components/Header";
-import AuthRequired from "@components/auth/AuthRequired";
-import { getAllFridge, getFridgeById } from "@api/fridges";
+import Header from '@components/Header';
 
 export default function Home(): JSX.Element {
   return (

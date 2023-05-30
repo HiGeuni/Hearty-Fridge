@@ -1,6 +1,6 @@
-import { Box, Button, Modal, Typography } from "@mui/material";
-import { Dispatch, ReactNode, SetStateAction, useState } from "react";
-import { ModalContainer, ModalContent, ModalInfo, ModalTitle } from "./style";
+import { Box, Button, Modal, Typography } from '@mui/material';
+import { Dispatch, ReactNode, SetStateAction, useState } from 'react';
+import { ModalContainer, ModalContent, ModalInfo, ModalTitle } from './style';
 
 interface IProps {
   open: boolean;
@@ -8,7 +8,7 @@ interface IProps {
   children: ReactNode;
 }
 
-const DefaultModal = ({ open, handleClose, children }: IProps) => {
+function DefaultModal({ open, handleClose, children }: IProps) {
   return (
     <div>
       <Modal
@@ -28,6 +28,6 @@ const DefaultModal = ({ open, handleClose, children }: IProps) => {
       </Modal>
     </div>
   );
-};
+}
 
 export default DefaultModal;

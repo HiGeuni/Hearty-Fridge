@@ -1,14 +1,13 @@
-import { IFridgeDetail } from "types";
-import Button from "./Button";
-import { BtnContainer, InfoContainer, InfoTitle, Location } from "./style";
-import { useState } from "react";
-import { DoneAllTwoTone } from "@mui/icons-material";
-import DonationModal from "@components/Forms/Donation";
-import ReservationModal from "@components/Forms/Reservation";
+import { IFridgeDetail } from 'types';
+import { useState } from 'react';
+import DonationModal from '@components/Forms/Donation';
+import ReservationModal from '@components/Forms/Reservation';
+import { BtnContainer, InfoContainer, InfoTitle, Location } from './style';
+import Button from './Button';
 
-type ButtonType = "donation" | "reservation" | null;
+type ButtonType = 'donation' | 'reservation' | null;
 
-const FridgeInfo = ({ data }: { data: IFridgeDetail }) => {
+function FridgeInfo({ data }: { data: IFridgeDetail }) {
   const [open, setOpen] = useState(false);
   const [type, setType] = useState<ButtonType>(null);
   const handleOpen = ({ type }: { type: ButtonType }) => {
@@ -23,15 +22,15 @@ const FridgeInfo = ({ data }: { data: IFridgeDetail }) => {
       <Location>{data.fridgeInfo.fridgeAddress}</Location>
       <BtnContainer>
         <Button
-          onClick={() => handleOpen({ type: "donation" })}
-          isResv={false}
+          onClick={() => handleOpen({ type: 'donation' })}
+          isReservation={false}
         />
         <Button
-          onClick={() => handleOpen({ type: "reservation" })}
-          isResv={true}
+          onClick={() => handleOpen({ type: 'reservation' })}
+          isReservation
         />
       </BtnContainer>
-      {type === "donation" ? (
+      {type === 'donation' ? (
         <DonationModal open={open} handleClose={handleClose} />
       ) : (
         <ReservationModal
@@ -42,6 +41,6 @@ const FridgeInfo = ({ data }: { data: IFridgeDetail }) => {
       )}
     </InfoContainer>
   );
-};
+}
 
 export default FridgeInfo;

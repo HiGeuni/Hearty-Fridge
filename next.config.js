@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: false,
   async rewrites() {
     return [
       {
-        source: "/api/v1/:path*",
+        source: '/api/v1/:path*',
         destination: `${process.env.NEXT_PUBLIC_SERVER_NAME}/api/v1/:path*`,
       },
     ];
@@ -12,3 +13,4 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+

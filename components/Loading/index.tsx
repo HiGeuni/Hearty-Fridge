@@ -1,14 +1,14 @@
-import BeatLoader from "react-spinners/FadeLoader";
+import BeatLoader from 'react-spinners/FadeLoader';
 
-const Loading = () => {
+function Loading() {
   return (
     <div className="contentWrap">
       <div
         style={{
-          position: "fixed",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
+          position: 'fixed',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
         }}
       >
         <BeatLoader
@@ -21,6 +21,6 @@ const Loading = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Loading;

@@ -1,18 +1,14 @@
-import { NextComponentType } from "next";
-import { useState } from "react";
-import { NavItem, Seperator } from "./style";
+import { Dispatch, SetStateAction } from 'react';
+import { NavItem, Seperator } from './style';
 
 interface SideMenuProps {
   isFavorite: boolean;
-  setIsFavorite: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsFavorite: Dispatch<SetStateAction<boolean>>;
 }
 
-const SideMenu: NextComponentType<SideMenuProps> = ({
-  isFavorite,
-  setIsFavorite,
-}) => {
+function SideMenu({ isFavorite, setIsFavorite }: SideMenuProps) {
   return (
-    <div style={{ display: "flex", alignItems: "center", marginTop: "30px" }}>
+    <div style={{ display: 'flex', alignItems: 'center', marginTop: '30px' }}>
       <NavItem activate={!isFavorite} onClick={() => setIsFavorite(false)}>
         Map
       </NavItem>
@@ -22,6 +18,6 @@ const SideMenu: NextComponentType<SideMenuProps> = ({
       </NavItem>
     </div>
   );
-};
+}
 
 export default SideMenu;

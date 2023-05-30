@@ -1,16 +1,16 @@
-import { CustomButton } from "./style";
+import { CustomButton } from './style';
 
 interface IProps {
-  isResv: boolean;
+  isReservation: boolean;
   onClick: () => void;
 }
 
-const Button = ({ onClick, isResv }: IProps) => {
+function Button({ onClick, isReservation }: IProps) {
   return (
-    <CustomButton onClick={onClick} isResv={isResv}>
-      {isResv ? "Reservation" : "Donation"}
+    <CustomButton onClick={onClick} isReservation={isReservation}>
+      {isReservation ? 'Reservation' : 'Donation'}
     </CustomButton>
   );
-};
+}
 
 export default Button;

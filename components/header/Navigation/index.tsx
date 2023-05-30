@@ -1,9 +1,8 @@
-import { NextComponentType } from "next";
-import styled from "@emotion/styled";
-import Link from "next/link";
-import Image from "next/image";
-import logo from "@public/logo.png";
-import { CustomLink, Navigation } from "./style";
+import { NextComponentType } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
+import logo from '@public/logo.png';
+import { CustomLink, Navigation } from './style';
 
 const NavigationComponent: NextComponentType = () => {
   return (
